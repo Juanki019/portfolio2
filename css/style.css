@@ -155,12 +155,12 @@ textarea {
     padding: 1.5rem 5rem;
     font-size: 1.6rem; }
   .btn--theme {
-    background: #0062b9;
+    background: #881d0b;
     color: #fff; }
   .btn--theme-inv {
-    color: #0062b9;
+    color: #881d0b;
     background: #fff;
-    border: 2px solid #0062b9;
+    border: 2px solid #881d0b;
     box-shadow: none;
     padding: calc(1.5rem - 2px) calc(5rem - 2px); }
 
@@ -291,7 +291,11 @@ textarea {
   .projects__row:last-child {
     margin-bottom: 0; }
   .projects__row-img-cont {
-    overflow: hidden; }
+    overflow: hidden; 
+    width: 400px; /* Set your desired width */
+    height: 300px; /* Set your desired height */
+    object-fit: cover; /* This property ensures the entire image is visible within the specified dimensions */
+}
   .projects__row-img {
     width: 100%;
     display: block;
@@ -848,3 +852,166 @@ textarea {
     }
     
   
+    .btn_t {
+      padding: 0.1em 0.25em;
+      width: 13em;
+      height: 4.2em;
+      background-color: #212121;
+      border: 0.08em solid #fff;
+      border-radius: 0.3em;
+      font-size: 12px;
+    }
+    .btn_t span {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      bottom: 0.4em;
+      width: 8.25em;
+      height: 2.5em;
+      background-color: #212121;
+      border-radius: 0.2em;
+      font-size: 1.5em;
+      color: #fff;
+      border: 0.08em solid #fff;
+      box-shadow: 0 0.4em 0.1em 0.019em #fff;
+    }
+    
+    .btn_t span:hover {
+      transition: all 0.5s;
+      transform: translate(0, 0.4em);
+      box-shadow: 0 0 0 0 #fff;
+    }
+    
+    .btn_t span:not(hover) {
+      transition: all 1s;
+    }
+    
+
+    .button_comp_div{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 3rem;
+    }
+
+/*
+*SLIDER
+*/
+    @keyframes slide {
+      0% { transform: translateX(0); }
+      10% { transform: translateX(0); }
+    
+      15% { transform: translateX(-100%); }
+      30% { transform: translateX(-100%); }
+    
+      35% { transform: translateX(-200%); }
+      50% { transform: translateX(-200%); }
+    
+
+    
+    }
+    
+    * { box-sizing: border-box; }
+    
+    html { scroll-behavior: smooth; }
+    
+    body {
+      font-family: sans-serif;
+    }
+    
+    .wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .slider {
+      position: relative;
+    }
+    
+    .slides {
+      position: relative;
+      display: flex;
+      overflow: hidden;
+    }
+    
+    .slide {
+      width: 100vw;
+      flex-shrink: 0;
+      animation-name: slide;
+      animation-duration: 20s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+    
+    .slides:hover .slide {
+      animation-play-state: paused;
+    }
+    
+    .slide img {
+      width: 100%;
+      height: 100%;
+      vertical-align: top;
+    }
+    
+    .slide a {
+      width: 100%;
+      display: inline-block;
+      position: relative;
+    }
+    
+    .caption {
+      color: white;
+      text-shadow: 1px 1px black;
+      font-size: 8vw;
+      position: absolute;
+      bottom: 8vw;
+      right: 4vw;
+    }
+    
+    .slide:target {
+      animation-name: none;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 50;
+    }
+    
+    .slider-controler {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      text-align: center;
+      padding: 5px;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 100;
+    }
+    
+    .slider-controler li {
+      margin: 0 0.5rem;
+      display: inline-block;
+      vertical-align: top;
+    }
+    
+    .slider-controler a {
+      display: inline-block;
+      vertical-align: top;
+      text-decoration: none;
+      color: white;
+      font-size: 1.5rem;
+    }
+    
+    @media only screen and (min-width: 1200px) {
+      .slide {
+        width: 500px;
+      }
+    
+      .caption {
+        font-size: 96px;
+        bottom: 96px;
+        right: 50px;
+      }
+    }

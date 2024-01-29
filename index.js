@@ -33,6 +33,19 @@ for (let i = 0; i < headerSmallMenuLinks.length; i++) {
 // ---
 const headerLogoConatiner = document.querySelector('.header__logo-container')
 
+function downloadDocument() {
+  var urlDocumento = "CVEnglish.pdf";
+  
+  var link = document.createElement("a");
+  
+  link.href = urlDocumento;
+  
+  link.download = "CVEnglish.pdf";
+  
+  link.click();
+}
+
+
 
 var TxtRotate = function(el, toRotate, period) {
   this.toRotate = toRotate;
