@@ -33,17 +33,32 @@ for (let i = 0; i < headerSmallMenuLinks.length; i++) {
 // ---
 const headerLogoConatiner = document.querySelector('.header__logo-container')
 
-function downloadDocument() {
-  var urlDocumento = "CV_JuanCarlos_Sanchez.pdf";
-  
-  var link = document.createElement("a");
-  
-  link.href = urlDocumento;
-  
-  link.download = "CVEnglish.pdf";
-  
-  link.click();
+function toggleLanguageMenu() {
+  const menu = document.getElementById("language-menu");
+  menu.style.display = (menu.style.display === "block") ? "none" : "block";
 }
+
+function downloadDocument(language) {
+  let urlDocumento = "";
+  let filename = "";
+
+  if (language === "en") {
+    urlDocumento = "CV_JuanCarlos_Sanchez_EN.pdf";
+    filename = "CV_JuanCarlos_Sanchez_EN.pdf";
+  } else if (language === "es") {
+    urlDocumento = "CV_JuanCarlos_Sanchez_ES.pdf";
+    filename = "CV_JuanCarlos_Sanchez_ES.pdf";
+  }
+
+  const link = document.createElement("a");
+  link.href = urlDocumento;
+  link.download = filename;
+  link.click();
+
+  // Cierra el menú después de la descarga
+  document.getElementById("language-menu").style.display = "none";
+}
+
 
 
 

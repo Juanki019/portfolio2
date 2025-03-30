@@ -104,11 +104,17 @@
             I'm Juan Carlos Sánchez, a passionate and driven Computer Engineering student currently based in Madrid, Spain. With a strong desire to stay up-to-date with the latest industry trends and broaden my experience in dynamic work environments, I'm eager to contribute my skills and knowledge to innovative and impactful projects.
             <br><br>
             Beyond my technical background, I’m a sociable person who enjoys meeting new people and building connections. I’m also passionate about sports—especially padel and basketball—which help me stay active, focused, and balanced in my daily life.
-            <div class="button_comp_div">
-              <button class="btn_t" onclick="downloadDocument()" target="_blank">
+            <div class="button_comp_div" style="position: relative;">
+              <button class="btn_t" onclick="toggleLanguageMenu()">
                 <span>CV download</span>
               </button>
+            
+              <div id="language-menu" style="display: none; position: absolute; top: 110%; background: white; border: 1px solid #ccc; border-radius: 4px; z-index: 10;">
+                <button onclick="downloadDocument('en')" style="display: block; width: 100%; padding: 8px 12px; border: none; background: white; cursor: pointer;">Download in English</button>
+                <button onclick="downloadDocument('es')" style="display: block; width: 100%; padding: 8px 12px; border: none; background: white; cursor: pointer;">Descargar en Español</button>
+              </div>
             </div>
+            
           </span>
         </h2>
     
